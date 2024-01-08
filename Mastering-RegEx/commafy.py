@@ -25,6 +25,7 @@ regexDigits = re.compile(r'^\d{4,}$')
 #  ()  - Group
 #  (?: - Do NOT assign a variable to this group (By default groups are assigned variables, this would be assigned to the variable '1')
 #  \d{3} - Match exactly 3 digits
+#  ()  - Match this group 1 or more times
 #  ?!  - Negative Lookahead (Check if we do not match after our current position)
 regexCommaReplace = re.compile(r'(?<=\d)(?=(?:\d{3})+(?!\d))')
 
