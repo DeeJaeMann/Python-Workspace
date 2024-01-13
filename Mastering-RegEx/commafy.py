@@ -9,7 +9,7 @@
 import re
 
 # Prompt the user for a number to input
-strNumber = input("Please enter a number greater than 999.\nThe greater the number, the better: ")
+str_number = input("Please enter a number greater than 999.\nThe greater the number, the better: ")
 
 # RegEx:
 #  r'' - Python - notes this as a regular expression pattern
@@ -17,7 +17,7 @@ strNumber = input("Please enter a number greater than 999.\nThe greater the numb
 #  \d{4,} - Match 4 or more digits
 #  $   - End of string
 #  Note: Python does not have a global flag to add in the pattern
-regexDigits = re.compile(r'^\d{4,}$')
+regex_digits = re.compile(r'^\d{4,}$')
 # RegEx:
 #  ?<= - Positive Lookbehind (Check if we can match this before our current position)
 #  \d  - 1 Digit
@@ -27,15 +27,15 @@ regexDigits = re.compile(r'^\d{4,}$')
 #  \d{3} - Match exactly 3 digits
 #  ()  - Match this group 1 or more times
 #  ?!  - Negative Lookahead (Check if we do not match after our current position)
-regexCommaReplace = re.compile(r'(?<=\d)(?=(?:\d{3})+(?!\d))')
+regex_comma_replace = re.compile(r'(?<=\d)(?=(?:\d{3})+(?!\d))')
 
-if regexDigits.match(strNumber) :
+if regex_digits.match(str_number) :
     # Convert the number
     # This is how we insert the commas into the string (Number)
-    strNumber = re.sub(regexCommaReplace, ',', strNumber)
+    str_number = re.sub(regex_comma_replace, ',', str_number)
 
     # Output the formatted string
-    print(f"{strNumber}")
+    print(f"{str_number}")
 else :
     # the number has less than 4 digits
     print("Please enter at least 4 digits!")
