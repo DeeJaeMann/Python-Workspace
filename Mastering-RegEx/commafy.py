@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 ###
 # Example of how to use a Regular Expression to insert commas in numbers
