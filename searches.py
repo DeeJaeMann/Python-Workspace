@@ -8,6 +8,7 @@ def simple_search(list, target):
     # Return -1 and steps taken if the target is not found in the list
     return -1, steps
 
+
 def binary_search(list, target):
     steps = 0
     low, high = 0, len(list) - 1
@@ -26,11 +27,14 @@ def binary_search(list, target):
     # Return -1 and steps taken if the target is not in the list
     return -1, steps
 
+
 target_name = "John"
 names = ["Alice", "Bob", "John", "Kate", "Mike"]
 
 index_simple, steps_simple = simple_search(names, target_name)
-print(f"Simple Search: Found {target_name} at index {index_simple} in {steps_simple} steps")
+print(
+    f"Simple Search: Found {target_name} at index {index_simple} in {steps_simple} steps")
 
 index_binary, steps_binary = binary_search(sorted(names), target_name)
-print(f"Binary Search: Found {target_name} at index {index_binary} in {steps_binary} steps")
+print(
+    f"Binary Search: Found {target_name} at index {index_binary} in {steps_binary} steps")
